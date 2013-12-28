@@ -24,16 +24,12 @@ $(document).ready(function() {
 	resizeDiv();
 	
 var wakeup_func = function () {
-    console.log('Wakeup Func');
-		console.log(FT_VALIDATED);
     if(FT_VALIDATED) {
-			console.log('FT_VALIDATED = true');
       update_nickname();
       update_playlists();
       clearInterval(wakeup_func);
     }else{
-			console.log('FT_VALIDATED = false');
-			setTimeout(wakeup_func, 1000);
+			setTimeout(wakeup_func, 200);
 		}
 }
 
