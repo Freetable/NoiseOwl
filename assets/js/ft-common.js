@@ -22,7 +22,6 @@ $.ajax({
     dataType: "json",
     data: { wwuserid: wwuserid(), sessionid: sessionid() },
     success: callback
-    }
 });
 }
 
