@@ -6236,7 +6236,7 @@ a.list-group-item.active:focus .list-group-item-text {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: rgba(2, 2, 2,0.4);
+  background-color: rgba(2, 2, 2,0.7);
   border: 1px solid rgb(60, 60, 60);
   border-radius: 30px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);

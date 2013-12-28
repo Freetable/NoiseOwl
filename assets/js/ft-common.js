@@ -31,5 +31,4 @@ $.ajax({
 
 }
 
-update_nickname();
 get_playlists();
