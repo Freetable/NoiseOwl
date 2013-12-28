@@ -24,13 +24,8 @@ $.ajax({
     success: function(data) {
     	//data = data.shift();
     	//console.log(data);
-			playlists = data;
+	playlists = data;
     }
 });
 }
-
-$(function (){
-	update_nickname();
-	get_playlists();	
-});
 
