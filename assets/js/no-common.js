@@ -25,13 +25,17 @@ function update_playlists() {
 
 $(document).ready(function() {
 	resizeDiv();
-	var wakeup_hook = setInterval( function() {
-		if(FT_VALIDATED) { 
-			update_nickname();
-			update_playlists();
-			clearInterval(wakeup_hook);
+	
+	var wakeup_func = function () {
+    if(FT_VALIDATED) {
+      update_nickname();
+      update_playlists();
+      clearInterval(wakeup_hook);
+    }else{
+			setTimeout(wakeup_func, 300);
 		}
-	}, 300 );
+}
+
 });
 
 
