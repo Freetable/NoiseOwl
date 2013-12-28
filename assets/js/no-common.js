@@ -1,5 +1,3 @@
-var wakeup_func = '';
-
 window.onresize = function(event) {
 	resizeDiv();
 }
@@ -25,7 +23,9 @@ function update_playlists() {
 $(document).ready(function() {
 	resizeDiv();
 	
-	wakeup_func = function () {
+var wakeup_func = function () {
+    console.log('Wakeup Func');
+		console.log(FT_VALIDATED);
     if(FT_VALIDATED) {
 			console.log('FT_VALIDATED = true');
       update_nickname();
