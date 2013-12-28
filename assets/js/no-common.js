@@ -1,3 +1,4 @@
+var wakeup_func = null;
 
 //<tr><td><button class='btn btn-block btn-info btn-xs'>test</button></td></tr>
 
@@ -26,7 +27,7 @@ function update_playlists() {
 $(document).ready(function() {
 	resizeDiv();
 	
-	var wakeup_func = function () {
+	wakeup_func = function () {
     if(FT_VALIDATED) {
       update_nickname();
       update_playlists();
