@@ -29,14 +29,8 @@ $.ajax({
 });
 }
 
-function slow_start() {
-	if(!FT_VALIDATED) { 
-		setTimeout( slow_start(), 500 ); 
-	}else{
-		update_nickname();
-		get_playlists();	
-	}
+$(document).ready() {
+	update_nickname();
+	get_playlists();	
 }
-
-slow_start();
 
