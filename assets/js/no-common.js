@@ -1,7 +1,3 @@
-var wakeup_func = null;
-
-//<tr><td><button class='btn btn-block btn-info btn-xs'>test</button></td></tr>
-
 window.onresize = function(event) {
 	resizeDiv();
 }
@@ -27,12 +23,13 @@ function update_playlists() {
 $(document).ready(function() {
 	resizeDiv();
 	
-	wakeup_func = function () {
+	var wakeup_func = function () {
     if(FT_VALIDATED) {
       update_nickname();
       update_playlists();
-      clearInterval(wakeup_hook);
+      clearInterval(wakeup_func);
     }else{
+			console.log('FT_VALIDATED = false');
 			setTimeout(wakeup_func, 1000);
 		}
 }
