@@ -9,7 +9,7 @@ $.ajax({
     data: { wwuserid: wwuserid() },
     success: function(data) { 
 				data = data.shift();
-				console.log(data);
+				//console.log(data);
 				nickname = data['nickname'];
 		}
 });
