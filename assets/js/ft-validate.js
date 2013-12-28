@@ -1,6 +1,6 @@
 var NETWORK_SERVICES_URL = 'https://gatekeepers.freetable.info/';
 var NETWORK_SERVICES_API = 'http://gatekeepers.freetable.info/api/';
-var FT_VALIDATED = FALSE;
+var FT_VALIDATED = false;
 
 var QueryString = function () {
   // This function is anonymous, is executed immediately and 
@@ -45,10 +45,10 @@ function verify_user(){
 						// we failed back to gatekeepers to try again
 						window.location.replace(NETWORK_SERVICES_URL);
 					}else{
-					FT_VALIDATED = TRUE;
+					FT_VALIDATED = true;
 					}});
 			}else{
-				FT_VALIDATED = TRUE;
+				FT_VALIDATED = true;
 			}
 	});
 }
