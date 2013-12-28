@@ -1741,7 +1741,7 @@ th {
   padding: 8px;
   line-height: 1.428571429;
   vertical-align: top;
-  border-top: 1px solid #dddddd;
+/*  border-top: 1px solid #dddddd; */
 }
 
 .table > thead > tr > th {
@@ -1772,7 +1772,7 @@ th {
 .table-condensed > thead > tr > td,
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > td {
-  padding: 5px;
+  padding: 0px;
 }
 
 .table-bordered {

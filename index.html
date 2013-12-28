@@ -33,21 +33,44 @@
 <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Back To Gatekeeper">&nbsp;<span class="glyphicon glyphicon-home"></span>&nbsp;</button>
 <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Logout">&nbsp;<span class="glyphicon glyphicon-remove"></span>&nbsp;</button>
 </div>
+<div class="container col-md-4">
+<h4 class='text-success well'>Queue</h4>
+</div>
+<div class="container col-md-4">
+<h4 class='text-success well'>Songs</h4>
+</div>
+<div class="container col-md-4">
+<h4 class='text-success well'>Playlists</h4>
+</div>
 <div class="clearfix"></div>
 <div id="no_queue" class="container well col-md-4">
-<h2 class="form-signin-heading text-info" align="center">Queue</h2>
+<h2 class="form-signin-heading text-info" align="center">&nbsp;</h2>
 </div>
 <div id="no_songs" class="container well col-md-4">
-<h2 class="form-signin-heading text-info" align="center">Songs</h2>
+<h2 class="form-signin-heading text-info" align="center">&nbsp;</h2>
 </div>
 <div id="no_playlists" class="container well col-md-4">
-<h2 class="form-signin-heading text-info" align="center">Playlists</h2>
+<table class="table table-hover table-condensed">
+<tr><td><a href="#">test</a></td></tr>
+</table>
 </div>
 
 </div>  
 </div>  
 <script>
+$(document).ready(function(){
+resizeDiv();
+});
 
+window.onresize = function(event) {
+resizeDiv();
+}
+
+function resizeDiv() {
+vpw = $(window).width();
+vph = $(window).height();
+$(‘#no_playlists’).css({‘height’: vph * 0.6});
+}
 </script>
 </body>
 </html>
