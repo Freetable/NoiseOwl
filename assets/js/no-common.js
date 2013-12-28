@@ -14,7 +14,12 @@ $('#no_playlists').css({'height': vph * 0.7});
 
 $(document).ready(function() {
 	resizeDiv();
-	update_nickname();
-	get_playlists();
+	var wakeup_hook = setInterval( function() {
+		if(FT_VALIDATED) { 
+			update_nickname();
+			get_playlists();
+			clearInterval(wakeup_hook);
+		}
+	}, 300 );
 });
 
