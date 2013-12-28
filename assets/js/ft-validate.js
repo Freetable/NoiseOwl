@@ -1,5 +1,6 @@
 var NETWORK_SERVICES_URL = 'https://gatekeepers.freetable.info/';
 var NETWORK_SERVICES_API = 'http://gatekeepers.freetable.info/api/';
+var FT_VALIDATED = FALSE;
 
 var QueryString = function () {
   // This function is anonymous, is executed immediately and 
@@ -31,20 +32,25 @@ function sessionid(){ return $.cookie('sessionid'); }
 
 function verify_user(){
       real_verify_user( wwuserid(), sessionid(), function (data) {
-			data = data.shift();
+      data = data.shift();
       //console.log(data);
       if( typeof data['1'] == 'undefined' ) { 
 				//cookies didn't work check url and try again
 				$.cookie('WWUSERID', QueryString.uid, { expires: 30 });
-				$.cookie('sessionid', QueryString.sid, { expires: 30});
+				$.cookie('sessionid', QueryString.sid, { expires: 30 });
 				real_verify_user( wwuserid(), sessionid(), function (data) { 
-		      data = data.shift();
-		      //console.log(data);
+		      			data = data.shift();
+		      			//console.log(data);
 					if( typeof data['1'] == 'undefined' ) {
 						// we failed back to gatekeepers to try again
 						window.location.replace(NETWORK_SERVICES_URL);
+					}else{
+					FT_VALIDATED = TRUE;
 					}});
-			}});
+			}else{
+				FT_VALIDATED = TRUE;
+			}
+	});
 }
 
 function real_verify_user( uid, sid, callback ){

@@ -23,12 +23,20 @@ $.ajax({
     data: { wwuserid: wwuserid(), sessionid: sessionid() },
     success: function(data) {
     	//data = data.shift();
-    	console.log(data);
-	playlists = data;
+    	//console.log(data);
+			playlists = data;
     }
 });
-
-
 }
 
-get_playlists();
+function slow_start() {
+	if(!FT_VALIDATED) { 
+		setTimeout( slow_start(), 100 ); 
+	}else{
+		update_nickname();
+		get_playlists();	
+	}
+}
+
+slow_start();
+
