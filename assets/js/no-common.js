@@ -37,6 +37,8 @@ var wakeup_func = function () {
 		}
 }
 
+wakeup_func();
+
 });
 
 
