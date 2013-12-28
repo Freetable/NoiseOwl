@@ -14,10 +14,12 @@ function resizeDiv() {
 }
 
 function update_playlists() {
-	get_playlists();
-	$('#no_playlist_table').html('');
-	playlists.forEach(function(element, index, array){
-		$('#no_playlist_table').append("<tr><td><button class='btn btn-block btn-info btn-xs' uid='"+element['playlist_number']+"'>"+element['playlist_name']+"</button></td></tr>");
+	get_playlists(function(data){
+		playlists = data;
+		$('#no_playlist_table').html('');
+		playlists.forEach(function(element, index, array){
+    	$('#no_playlist_table').append("<tr><td><button class='btn btn-block btn-info btn-xs' uid='"+element['playlist_number']+"'>"+element['playlist_name']+"</button></td></tr>");
+		});
 	});
 }
 

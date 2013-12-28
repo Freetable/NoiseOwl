@@ -15,16 +15,13 @@ $.ajax({
 });
 }
 
-function get_playlists() {
+function get_playlists( callback ) {
 $.ajax({
     type: "POST",
     url: NETWORK_SERVICES_API+"get_playlists.pls",
     dataType: "json",
     data: { wwuserid: wwuserid(), sessionid: sessionid() },
-    success: function(data) {
-    	//data = data.shift();
-    	//console.log(data);
-	playlists = data;
+    success: callback;
     }
 });
 }
