@@ -17,7 +17,7 @@ $.ajax({
 
 function get_playlists() {
 $.ajax({
-    type: "GET",
+    type: "POST",
     url: NETWORK_SERVICES_API+"get_playlists.pls",
     dataType: "json",
     data: { wwuserid: wwuserid(), sessionid: sessionid() },
