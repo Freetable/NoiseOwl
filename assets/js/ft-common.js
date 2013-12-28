@@ -21,7 +21,7 @@ $.ajax({
     url: NETWORK_SERVICES_API+"get_playlists.pls",
     dataType: "json",
     data: { wwuserid: wwuserid(), sessionid: sessionid() },
-    success: callback;
+    success: callback
     }
 });
 }
