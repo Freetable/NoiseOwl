@@ -13,14 +13,23 @@ function resizeDiv() {
 	$('#no_playlists').css({'height': vph * 0.7});
 }
 
+function update_playlists() {
+	get_playlists();
+	$('#no_playlist_table').html('');
+	playlists.forEach(function(element, index, array){
+		$('#no_playlist_table').append("<tr><td><button class='btn btn-block btn-info btn-xs' uid='"+element['playlist_number']+"'>"+element['playlist_name']+"</button></td></tr>");
+	});
+}
+
 $(document).ready(function() {
 	resizeDiv();
 	var wakeup_hook = setInterval( function() {
 		if(FT_VALIDATED) { 
 			update_nickname();
-			get_playlists();
+			update_playlists();
 			clearInterval(wakeup_hook);
 		}
 	}, 300 );
 });
+
 
