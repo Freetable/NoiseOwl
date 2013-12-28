@@ -29,8 +29,8 @@ $.ajax({
 });
 }
 
-$(document).ready() {
+$(function (){
 	update_nickname();
 	get_playlists();	
-}
+});
 
