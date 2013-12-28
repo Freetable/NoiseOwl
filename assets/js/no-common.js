@@ -32,7 +32,7 @@ $(document).ready(function() {
       update_playlists();
       clearInterval(wakeup_hook);
     }else{
-			setTimeout(wakeup_func, 300);
+			setTimeout(wakeup_func, 1000);
 		}
 }
 
